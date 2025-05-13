@@ -3,37 +3,47 @@
     
     <?php include "../header.php";?>
     <body id="loginBody" class="">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-sm-4">
-                    <div class="card shadow-lg o-hidden border-0 shadow-lg my-5">
-                        <div class="col-sm-5"></div>
-                        <div class="card-body p-0 col-sm-2">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="" style="background-color: white; padding: 30px; border-radius: 25px;">
-                                        <div class="center">
-                                            <img src="/<?php echo $pluginFolder; ?>/images/gallery/logo.png" id="imgLogo" class="img-fluid" alt="">
-                                            <h3 class="" style="color:black">
-                                                <span><?php echo $systemTitle; ?></span>
-                                            </h3>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-user input-lg" id="txtUsername" placeholder="Enter Username">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user input-lg" id="txtPassword" placeholder="Password">
-                                        </div>
-                                        <div class="form-group">
-                                        </div>
-                                        <button  class="btn btn-primary btn-user btn-block" id="btnLogin">
-                                            Login
-                                        </button>
+        <style>
+            .parent {
+                display: flex;
+                justify-content: center; /* horizontal */
+                align-items: center;     /* vertical */
+                height: 100vh;           /* fill full height */
+            }
+
+            .child {
+                width: 300px;
+                /* padding: 20px; */
+                /* background-color: #eee; */
+            }
+        </style>
+        <div class="container parent">
+            <div class="child">
+                <div class="card">
+                    <div class="card-body" style="width:100%">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="" style="background-color: white; padding: 30px; border-radius: 25px;">
+                                    <div class="center">
+                                        <img src="/<?php echo $pluginFolder; ?>/images/gallery/logo.png" id="imgLogo" class="img-fluid" alt="">
+                                        <h3 class="" style="color:black">
+                                            <span><?php echo $systemTitle; ?></span>
+                                        </h3>
                                     </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user input-lg" id="txtUsername" placeholder="Enter Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control form-control-user input-lg" id="txtPassword" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                    </div>
+                                    <button  class="btn btn-primary btn-user btn-block" id="btnLogin">
+                                        Login
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-5"></div>
                     </div>
                 </div>
             </div>
