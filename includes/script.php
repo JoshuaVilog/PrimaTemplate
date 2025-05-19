@@ -24,6 +24,8 @@
     // console.log("Random Generated Code: "+<?php echo $generateRandomNumber; ?>);
 </script>
 
+<script src="/<?php echo $rootFolder; ?>/User.js?v=<?php echo $generateRandomNumber; ?>"></script>
+
 <!-- <script src="/<?php echo $rootFolder; ?>/main.js?v=<?php echo $generateRandomNumber; ?>"></script> -->
 <!-- <script src="/<?php echo $rootFolder; ?>/getRecords.js?v=<?php echo $generateRandomNumber; ?>"></script> -->
 <!-- <script src="/<?php echo $rootFolder; ?>/validation.js?v=<?php echo $generateRandomNumber; ?>"></script> -->

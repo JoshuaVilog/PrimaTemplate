@@ -53,7 +53,7 @@
         }
 
         #loginBody {
-            background-image: url('/<?php echo $pluginFolder; ?>/images/gallery/PRIMATECHPHILSFRONT.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+            background-image: url('/<?php echo $pluginFolder; ?>/images/gallery/PRIMATECHPHILSFRONT.jpg');
             height: 100%;
             background-position: center;
             background-repeat: no-repeat;

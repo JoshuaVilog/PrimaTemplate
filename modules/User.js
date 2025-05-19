@@ -1,26 +1,25 @@
-$(document).ready(function(){
+class User {
+    constructor(){}
+
     
-    $("#btnLogin").click(function(){
-        let txtUsername = $("#txtUsername").val();
-        let txtPassword = $("#txtPassword").val();
-        
+
+    Login(user){
+
         $.ajax({
             url: "ajax/login.php",
             method: "POST",
-            data: { 
-                username: txtUsername,
-                password: txtPassword 
+            data: {
+                username: user.username.val(),
+                password: user.password.val(), 
             },
             success: function(response) {
-    
-                //console.log(response);
                 if(response == "False"){
                     Swal.fire({
                         title: 'Incorrect Username or Password!',
                         text: 'Please check your username or password.',
                         icon: 'warning'
                     })
-                    $("#txtPassword").val("");
+                    user.password.val("");
                 } else if(response == "disabled"){
                     Swal.fire({
                         title: 'The account is restricted!',
@@ -49,7 +48,6 @@ $(document).ready(function(){
                 
             }
         });
-    });
-});
-
+    }
+}
 
