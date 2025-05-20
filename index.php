@@ -1,8 +1,22 @@
 <?php
-include "path.php";
-//include "connection.php";
+session_start();
 
-header("location: /$rootFolder/login/index.php");
+$route = $_GET['route'] ?? 'login';
 
+$allowedRoutes = ['home', 'login', 'dashboard', 'logout'];
 
-?>
+if (!in_array($route, $allowedRoutes)) {
+    http_response_code(404);
+    echo "404 - Page not found";
+    exit;
+}
+
+if ($route === 'logout') {
+    session_destroy();
+    header("Location: login");
+    exit;
+}
+
+// include 'includes/header.php';
+include "views/$route.php";
+// include 'includes/footer.php';
