@@ -1,8 +1,6 @@
 class User {
     constructor(){}
 
-    
-
     Login(user){
 
         $.ajax({
@@ -10,7 +8,7 @@ class User {
             method: "POST",
             data: {
                 username: user.username.val(),
-                password: user.password.val(), 
+                password: user.password.val(),
             },
             success: function(response) {
                 if(response == "False"){
@@ -39,13 +37,26 @@ class User {
                         confirmButtonText: 'Proceed!',
                         timer: 2000,
                         willClose: () => {
-                            window.location.href = "/"+rootFolder+"/dashboard/index.php";
+                            //window.location.href = "/"+rootFolder+"/dashboard/index.php";
                         },
                        
                     })
 
                 }
                 
+            }
+        });
+    }
+    Test(){
+        $.ajax({
+            url: "php/test.php",
+            method: "POST",
+            data: {
+                
+            },
+            success: function(response) {
+
+                console.log(response);
             }
         });
     }

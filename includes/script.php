@@ -1,15 +1,10 @@
-<?php include "path.php";?>
+<?php 
+//include "path.php";
+include "config/db.php";
+?>
 
-<!-- basic scripts -->
-
-<!--[if !IE]> -->
 <script src="/<?php echo $pluginFolder; ?>/js/jquery-2.1.4.min.js?v=<?php echo $generateRandomNumber; ?>"></script>
 
-<!-- <![endif]-->
-
-<!--[if IE]>
-<script src="assets/js/jquery-1.11.3.min.js"></script>
-<![endif]-->
 <script type="text/javascript">
     if('ontouchstart' in document.documentElement) document.write("<script src='/<?php echo $pluginFolder; ?>/js/jquery.mobile.custom.min.js?v=<?php echo $generateRandomNumber; ?>'>"+"<"+"/script>");
 </script>
@@ -24,7 +19,8 @@
     // console.log("Random Generated Code: "+<?php echo $generateRandomNumber; ?>);
 </script>
 
-<script src="/<?php echo $rootFolder; ?>/User.js?v=<?php echo $generateRandomNumber; ?>"></script>
+<!-- <script src="/<?php echo $rootFolder; ?>/User.js?v=<?php echo $generateRandomNumber; ?>"></script> -->
+
 
 <!-- <script src="/<?php echo $rootFolder; ?>/main.js?v=<?php echo $generateRandomNumber; ?>"></script> -->
 <!-- <script src="/<?php echo $rootFolder; ?>/getRecords.js?v=<?php echo $generateRandomNumber; ?>"></script> -->

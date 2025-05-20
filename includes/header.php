@@ -1,4 +1,8 @@
-<?php include "path.php";?>
+<?php 
+// include "path.php";
+include "config/db.php";
+
+?>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
@@ -11,15 +15,8 @@
     <link rel="stylesheet" href="/<?php echo $pluginFolder; ?>/css/bootstrap.min.css?v=<?php echo $generateRandomNumber; ?>" />
     <link rel="stylesheet" href="/<?php echo $pluginFolder; ?>/font-awesome/4.5.0/css/font-awesome.min.css?v=<?php echo $generateRandomNumber; ?>" />
 
-    <!-- text fonts -->
-    <!-- <link rel="stylesheet" href="/<?php echo $pluginFolder; ?>/css/fonts.googleapis.com.css" /> -->
-
     <!-- ace styles -->
     <link rel="stylesheet" href="/<?php echo $pluginFolder; ?>/css/ace.min.css?v=<?php echo $generateRandomNumber; ?>" class="ace-main-stylesheet" id="main-ace-style" />
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
-    <![endif]-->
     <link rel="stylesheet" href="/<?php echo $pluginFolder; ?>/css/ace-skins.min.css?v=<?php echo $generateRandomNumber; ?>" />
     <link rel="stylesheet" href="/<?php echo $pluginFolder; ?>/css/ace-rtl.min.css?v=<?php echo $generateRandomNumber; ?>" />
     <link rel="stylesheet" href="/<?php echo $pluginFolder; ?>/css/select2.min.css?v=<?php echo $generateRandomNumber; ?>" />

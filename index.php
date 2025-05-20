@@ -17,6 +17,7 @@ if ($route === 'logout') {
     exit;
 }
 
-// include 'includes/header.php';
+include 'includes/header.php';
+include 'includes/script.php';
 include "views/$route.php";
-// include 'includes/footer.php';
+
