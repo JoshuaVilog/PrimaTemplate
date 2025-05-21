@@ -1,6 +1,6 @@
 <?php 
 //include "path.php";
-include "config/db.php";
+include "config/path.php";
 ?>
 
 <script src="/<?php echo $pluginFolder; ?>/js/jquery-2.1.4.min.js?v=<?php echo $generateRandomNumber; ?>"></script>

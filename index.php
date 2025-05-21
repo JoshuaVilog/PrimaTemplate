@@ -17,6 +17,11 @@ if ($route === 'logout') {
     exit;
 }
 
+if (!isset($_SESSION['USER_CODE']) && $route != "login") {
+    header("Location: login");
+    exit();
+}
+
 include 'includes/header.php';
 include 'includes/script.php';
 include "views/$route.php";

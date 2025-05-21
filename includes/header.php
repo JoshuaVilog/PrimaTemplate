@@ -1,6 +1,6 @@
 <?php 
 // include "path.php";
-include "config/db.php";
+include "config/path.php";
 
 ?>
 <head>

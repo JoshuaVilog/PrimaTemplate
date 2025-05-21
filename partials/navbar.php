@@ -10,20 +10,20 @@
             <span class="icon-bar"></span>
         </button>
 
-        <div class="navbar-header pull-left" >
+        <div class="navbar-header pull-left">
             <a href="index.html" class="navbar-brand">
                 <small>
                     <?php echo $systemTitle; ?>
                 </small>
             </a>
         </div>
-
+        
         <div class="navbar-buttons navbar-header pull-right" role="navigation" >
             <ul class="nav ace-nav" >
                 <li class="light-blue dropdown-modal">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle" style="background-color:#00008b">
                         <span class="user-info">
-                            <small>Welcome,</small>
+                            <small>Welcome, <?php echo $_SESSION['USER_FULLNAME']; ?></small>
                             <span id="displayUserFullName"></span>
                         </span>
 
@@ -32,7 +32,7 @@
 
                     <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close" >
                         <li>
-                            <a href="/<?php echo $rootFolder; ?>/profile">
+                            <a href="profile">
                                 <i class="ace-icon fa fa-user"></i>
                                 Profile
                             </a>

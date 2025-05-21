@@ -55,13 +55,15 @@
             include "script/api.js";
             ?>
 
-            let myUser = new User();
-
-            myUser.Test();
+            let user = new User();
 
             $("#btnLogin").click(function(){
+                let txtUsername = $("#txtUsername");
+                let txtPassword = $("#txtPassword");
 
-                // window.location.href = "dashboard";
-                window.location.href = "home";
+                user.username = txtUsername;
+                user.password = txtPassword;
+
+                user.Login(user)
             });
         </script>
