@@ -47,14 +47,9 @@
             </div>
         </div>
         <!-- JavaScript -->
-        <!-- <script src="js/functions.js?v=<?php //echo $generateRandomNumber; ?>"></script> -->
+        <script src="/<?php echo $rootFolder; ?>/script/User.js?v=<?php echo $generateRandomNumber; ?>"></script>
         
         <script>
-            <?php
-            include "script/main.js";
-            include "script/api.js";
-            ?>
-
             let user = new User();
 
             $("#btnLogin").click(function(){

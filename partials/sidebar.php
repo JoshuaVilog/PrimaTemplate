@@ -13,9 +13,9 @@
             <b class="arrow"></b>
         </li>
         <li class="" id="">
-            <a href="home">
+            <a href="record">
                 <i class="menu-icon fa fa-tachometer"></i>
-                <span class="menu-text"> Home </span>
+                <span class="menu-text"> Records </span>
             </a>
 
             <b class="arrow"></b>

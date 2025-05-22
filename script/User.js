@@ -13,13 +13,12 @@ class User {
             })
         } else {
             $.ajax({
-                url: "php/controllers/Login.php",
+                url: "php/controllers/User/Login.php",
                 method: "POST",
                 data: {
                     username: username,
                     password: password,
                 },
-                // dataType: 'json',
                 success: function(response) {
     
                     console.log(response);

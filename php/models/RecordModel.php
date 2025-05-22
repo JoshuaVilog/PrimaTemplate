@@ -2,19 +2,20 @@
 require_once __DIR__ . '/../../config/db.php';
 
 class RecordModel {
+    
     public static function DisplayRecords() {
         $db = DB::connection1();
-        $sql = "SELECT * FROM record";
+        $sql = "SELECT * FROM record WHERE COALESCE(DELETED_AT, '') = '' ORDER BY RID DESC";
         $result = $db->query($sql);
 
-        $users = [];
+        $records = [];
         if ($result && $result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $users[] = $row;
+                $records[] = $row;
             }
         }
 
-        return $users;
+        return $records;
     }
 
     public static function GetRecord($id){
@@ -36,12 +37,12 @@ class RecordModel {
         $db = DB::connection1();
         $userCode = $_SESSION['USER_CODE'];
 
-        $desc = $records['desc'];
+        $desc = $db->real_escape_string($records->desc);
 
         $sql = "INSERT INTO `record`(
             `RID`,
             `DESCRIPTION`,
-            `CREATED_BY`,
+            `CREATED_BY`
         )
         VALUES(
             DEFAULT,
@@ -49,6 +50,41 @@ class RecordModel {
             '$userCode'
         )";
         return $db->query($sql);
+    }
+    public static function UpdateRecord($records){
+        $db = DB::connection1();
+        $userCode = $_SESSION['USER_CODE'];
+
+        $desc = $db->real_escape_string($records->desc);
+        $id = $records->id;
+
+        $sql = "UPDATE
+            `record`
+        SET
+            `DESCRIPTION` = '$desc',
+            `UPDATED_BY` = '$userCode'
+        WHERE
+            `RID` = $id";
+        return $db->query($sql);
+    }
+    public static function RemoveRecord($id){
+        $db = DB::connection1();
+        $userCode = $_SESSION['USER_CODE'];
+
+        date_default_timezone_set('Asia/Manila');
+        $createdAt = date("Y-m-d H:i:s");
+
+        $sql = "UPDATE
+            `record`
+        SET
+            `DELETED_AT` = '$createdAt',
+            `DELETED_BY` = '$userCode'
+        WHERE
+            `RID` = $id";
+        
+        return $db->query($sql);
+
+
     }
 
 

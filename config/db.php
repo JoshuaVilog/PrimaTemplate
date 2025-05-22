@@ -36,5 +36,5 @@ class DB {
 
 }
 
-// echo "EYY";
+
 ?>

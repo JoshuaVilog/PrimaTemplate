@@ -15,13 +15,11 @@ include "config/path.php";
 <script src="/<?php echo $pluginFolder; ?>/js/ace-elements.min.js?v=<?php echo $generateRandomNumber; ?>"></script>
 <script src="/<?php echo $pluginFolder; ?>/js/ace.min.js?v=<?php echo $generateRandomNumber; ?>"></script>
 
-<script>
-    // console.log("Random Generated Code: "+<?php echo $generateRandomNumber; ?>);
-</script>
+<!-- MAIN JS -->
+<script src="/<?php echo $rootFolder; ?>/script/main.js?v=<?php echo $generateRandomNumber; ?>"></script>
+
 
 <!-- <script src="/<?php echo $rootFolder; ?>/User.js?v=<?php echo $generateRandomNumber; ?>"></script> -->
-
-
 <!-- <script src="/<?php echo $rootFolder; ?>/main.js?v=<?php echo $generateRandomNumber; ?>"></script> -->
 <!-- <script src="/<?php echo $rootFolder; ?>/getRecords.js?v=<?php echo $generateRandomNumber; ?>"></script> -->
 <!-- <script src="/<?php echo $rootFolder; ?>/validation.js?v=<?php echo $generateRandomNumber; ?>"></script> -->
