@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../models/UserModel.php';
+require_once __DIR__ . '/../../models/EmployeeModel.php';
 
 header('Content-Type: application/json');
 
@@ -9,28 +9,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     try {
-        $users = UserModel::CheckAccount($username, $password);
+        $users = EmployeeModel::CheckAccount($username, $password);
         
         if($users == null){
 
             echo json_encode(['status' => 'incorrect', 'data' => "incorrect"]);
         } else {
-            $status = $users['USER_STATUS'];
-            $userID = $users['USER_ID'];
-            $userFLname = $users['USER_FNAME']. " " .$users['USER_LNAME'];
+            $status = $users['ACTIVE'];
+            $userID = $users['EMPLOYEE_ID'];
+            $userFLname = $users['EMPLOYEE_NAME'];
+            $userRole = $users['ROLE'];
 
-            if($status == "0"){
+            if($status == "2"){
                 echo json_encode(['status' => 'inactive', 'data' => "inactive"]);
-            } else if($status == "1"){
+            } else {
 
                 $_SESSION['USER_CODE'] = $userID;
                 $_SESSION['USER_FULLNAME'] = $userFLname;
+                $_SESSION['USER_ROLE'] = $userRole;
 
                 echo json_encode(['status' => 'success', 'data' => $users]);
+
+                /* 
+                if($userRole == "1"){
+                    $_SESSION['USER_CODE'] = $userID;
+                    $_SESSION['USER_FULLNAME'] = $userFLname;
+                    $_SESSION['USER_ROLE'] = $userRole;
+    
+                    echo json_encode(['status' => 'success', 'data' => $users]);
+                } else {
+                    echo json_encode(['status' => 'inactive', 'data' => "inactive"]);
+                }
+                 */
             }
         }
     } catch (Exception $e) {
         echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
     }
 }
+
 ?>
